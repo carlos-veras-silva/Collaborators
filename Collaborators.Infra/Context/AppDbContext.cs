@@ -18,15 +18,15 @@ public class AppDbContext : DbContext
         modelBuilder.ApplyConfiguration(new CollaboratorMap());
 
         // Configuração adicional para enums (opcional)
-        modelBuilder
-            .Entity<Colaborador>()
-            .Property(c => c.Cargo)
-            .HasConversion<string>(); // Armazena enums como strings no BD
+        //modelBuilder
+        //    .Entity<Colaborador>()
+        //    .Property(c => c.Cargo)
+        //    .HasConversion<string>(); // Armazena enums como strings no BD
 
-        modelBuilder
-            .Entity<Colaborador>()
-            .Property(c => c.Departamento)
-            .HasConversion<string>();
+        //modelBuilder
+        //    .Entity<Colaborador>()
+        //    .Property(c => c.Departamento)
+        //    .HasConversion<string>();
 
         base.OnModelCreating(modelBuilder);
     }

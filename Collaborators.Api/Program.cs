@@ -1,6 +1,6 @@
-using System;
-using Collaborators.Infra.Context;
-using MediatR;
+using Collaborators.Application.Commands.Collaborators;
+using Collaborators.Domain.Interfaces;
+using Collaborators.Infra.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-// Configuração do MediatR
-//builder.Services.AddMediatR(cfg =>
-//    cfg.RegisterServicesFromAssembly(typeof(CriarColaboradorHandler).Assembly));
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(typeof(CreateColaboradorCommandHandler).Assembly));
 
 // Configuração do AutoMapper
 //builder.Services.AddAutoMapper(typeof(ColaboradorMappingProfile));
@@ -24,7 +23,7 @@ builder.Services.AddSwaggerGen();
 //    options.(builder.Configuration.GetConnectionString("NPSqlConnection")));
 
 // Registro do Repository
-//builder.Services.AddScoped<IColaboradorRepository, ColaboradorRepository>();
+builder.Services.AddScoped<IColaboradorRepository, ColaboradorRepository>();
 
 
 var app = builder.Build();

@@ -16,9 +16,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.7" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Collaborators.Domain\Collaborators.Domain.csproj" />
   </ItemGroup>
 </Project>

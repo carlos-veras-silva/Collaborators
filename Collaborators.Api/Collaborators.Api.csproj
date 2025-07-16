@@ -12,10 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Collaborators.Application\Collaborators.Application.csproj" />
     <ProjectReference Include="..\Collaborators.Infra\Collaborators.Infra.csproj" />
   </ItemGroup>
 

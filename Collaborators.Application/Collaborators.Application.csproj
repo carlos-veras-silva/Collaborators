@@ -11,12 +11,15 @@
     <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="13.0.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\Collaborators\" />
     <Folder Include="Dtos\" />
     <Folder Include="Mappings\" />
     <Folder Include="Queries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Collaborators.Domain\Collaborators.Domain.csproj" />
   </ItemGroup>
 </Project>
