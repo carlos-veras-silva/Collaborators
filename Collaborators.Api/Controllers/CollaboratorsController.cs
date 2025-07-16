@@ -21,4 +21,8 @@ public class ColaboratorsController : ControllerBase
         var colaboradorId = await _mediator.Send(command);
         return Ok(new { Id = colaboradorId });
     }
+
+
+
+
 }

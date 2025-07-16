@@ -18,11 +18,9 @@ public class CreateColaboradorCommandHandler : IRequestHandler<CreateColaborador
 
     public async Task<int> Handle(CreateColaboradorCommand request, CancellationToken cancellationToken)
     {
-        // Validações (pode usar FluentValidation se necessário)
         if (string.IsNullOrEmpty(request.NomeCompleto))
             throw new ArgumentException("Nome completo é obrigatório.");
 
-        // Criar a entidade de domínio
         var colaborador = ColaboradorFactory.Create
         (
             request.NomeCompleto,
