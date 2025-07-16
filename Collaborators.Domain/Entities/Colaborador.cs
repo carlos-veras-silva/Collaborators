@@ -5,6 +5,28 @@ namespace Collaborators.Domain.Entities
 {
     public class Colaborador
     {
+        public Colaborador(string nomeCompleto,
+                           string cpf,
+                           string rg,
+                           string email,
+                           string telefone,
+                           DateTime dataNascimento,
+                           DateTime dataAdmissao,
+                           Cargo cargo,
+                           Departamento departamento)
+        {
+            NomeCompleto = nomeCompleto;
+            CPF = cpf;
+            RG = rg;
+            Email = email;
+            Telefone = telefone;
+            DataNascimento = dataNascimento;
+            DataAdmissao = dataAdmissao;
+            Cargo = cargo;
+            Departamento = departamento;
+            Ativo = true;
+        }
+
         public int Id { get; private set; }
         public string NomeCompleto { get; private set; }
         public string CPF { get; private set; }
@@ -15,7 +37,7 @@ namespace Collaborators.Domain.Entities
         public DateTime DataAdmissao { get; private set; }
         public DateTime? DataDemissao { get; private set; }
         public bool Ativo { get; private set; }
-        
+
         public Cargo Cargo { get; private set; }
         public Departamento Departamento { get; private set; }
 

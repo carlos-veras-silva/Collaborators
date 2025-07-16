@@ -23,19 +23,18 @@ public class CreateColaboradorCommandHandler : IRequestHandler<CreateColaborador
             throw new ArgumentException("Nome completo é obrigatório.");
 
         // Criar a entidade de domínio
-        var colaborador = new Colaborador
-        {
-            NomeCompleto = request.NomeCompleto,
-            CPF = request.CPF,
-            RG = request.RG,
-            Email = request.Email,
-            Telefone = request.Telefone,
-            DataNascimento = request.DataNascimento,
-            DataAdmissao = request.DataAdmissao,
-            Cargo = request.Cargo,
-            Departamento = request.Departamento,
-            Ativo = true // Por padrão, colaborador é criado como ativo
-        };
+        var colaborador = ColaboradorFactory.Create
+        (
+            request.NomeCompleto,
+            request.CPF,
+            request.RG,
+            request.Email,
+            request.Telefone,
+            request.DataNascimento,
+            request.DataAdmissao,
+            request.Cargo,
+            request.Departamento
+        );
 
         // Persistir no banco
         await _colaboradorRepository.AddAsync(colaborador);
